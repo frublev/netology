@@ -48,19 +48,19 @@ class Birds(Animals):
   def take_care(self):
     return print(self.animal_type, self.name + ": яйца собраны")
 
-class Geese(Animals):
+class Geese(Birds):
   def __init__(self, name, weight, animal_type = "Гусь"):
     super().__init__(name, weight, animal_type)
   def make_a_sound(self):
     return print(self.name, ', скажи "Га-га-га!"')
 
-class Chicken(Animals):
+class Chicken(Birds):
   def __init__(self, name, weight, animal_type = "Курица"):
     super().__init__(name, weight, animal_type)
   def make_a_sound(self):
     return print(self.name, ', скажи "Ко-ко-ко!"')
 
-class Ducks(Animals):
+class Ducks(Birds):
   def __init__(self, name, weight, animal_type = "Утка"):
     super().__init__(name, weight, animal_type)
   def make_a_sound(self):
@@ -76,18 +76,18 @@ goose2 = Geese("Белый", 12, "Гусь")
 chicken1 = Chicken("Ко-ко", 3, "Курица")
 chicken1 = Chicken("Кукареку", 2, "Курица")
 Duck1 = Ducks("Кряква", 7, "Утка")
-catle = Animals("Скот", 0, "Скот")
+cattle = Animals("Скот", 0, "Скот")
 
 for animal in Farm:
   animal.feed()
   animal.take_care()
 
 #к сожалению, не нашел более изящного способа обработать сразу все экземпляры класса
-catle_weight = 0
+cattle_weight = 0
 for animal in Farm:
-  catle_weight = catle_weight + animal.weight
-print("Общий вес скота:", catle_weight)
+  cattle_weight = cattle_weight + animal.weight
+print("Общий вес скота:", cattle_weight)
 
 for animal in Farm:  
-  if animal > catle : catle = animal
-print("Самое крупное животное -", catle.animal_type,  catle.name, "весом", catle.weight, "кг")
+  if animal > cattle : cattle = animal
+print("Самое крупное животное -", cattle.animal_type,  cattle.name, "весом", cattle.weight, "кг")
