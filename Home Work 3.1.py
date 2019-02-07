@@ -27,7 +27,7 @@ def word_count(descriptions):
     word_list = descriptions.strip().split()
     i = 0
     while i < len(word_list):
-        if len(word_list[i]) < 6:
+        if len(word_list[i]) < 7:
             del word_list[i]
         else:
             i += 1
