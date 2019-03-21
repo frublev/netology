@@ -16,21 +16,19 @@ class Country:
         else:
             raise StopIteration
 
-
-with open("countries.json") as read_file:
-    countries_info = json.load(read_file)
-countries_name = Country(countries_info)
-
-
 def output_hash(file_name):
     with open(file_name) as read_file:
         for line in read_file:
             yield hashlib.md5(line.encode()).digest()
 
+if __name__ == "__main__":
+    with open("countries.json") as read_file:
+        countries_info = json.load(read_file)
+    countries_name = Country(countries_info)
 
-with open("country-link.txt", "w", encoding="utf8") as country_link:
-    for country in countries_name:
-        country_link.write(country + ' - ' + "https://en.wikipedia.org/wiki/" + country.replace(' ', '_') + '\n')
+    with open("country-link.txt", "w", encoding="utf8") as country_link:
+        for country in countries_name:
+            country_link.write(country + ' - ' + "https://en.wikipedia.org/wiki/" + country.replace(' ', '_') + '\n')
 
-for line in output_hash("country-link.txt"):
-    print(line)
+    for line in output_hash("country-link.txt"):
+        print(line)
