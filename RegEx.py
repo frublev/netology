@@ -22,15 +22,13 @@ for contact in contacts_list:
     for pattern in patterns:
         find = re.findall(pattern[0], contact)
         contact = re.sub(pattern[0], pattern[1], contact)
-    print(contact)
+    # print(contact)
     correct_list.append(contact.split(','))
 
 fname_sname = []
 for contact in correct_list:
     fname_sname.append(contact[0] + contact[1])
 
-#i = 2
-#m = 1
 del_cont = []
 for i in range(1, len(correct_list) - 1):
     for m in range(i + 1, len(correct_list)):
@@ -42,7 +40,7 @@ for i in range(1, len(correct_list) - 1):
 
 for d in del_cont:
     correct_list.remove(d)
-pprint(correct_list)
+# pprint(correct_list)
 
 
 # TODO 2: сохраните получившиеся данные в другой файл
