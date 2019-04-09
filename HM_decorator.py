@@ -56,5 +56,6 @@ def output_hash(file_name):
     return hash_country
 
 
-for line in output_hash("country-link.txt"):
-    print(line)
+if __name__ == '__main__':
+    for line in output_hash("country-link.txt"):
+        print(line)
