@@ -85,7 +85,7 @@ students = [student1, student2, student3]
 #add_params(student3)
 #add_student(student3)
 #add_student(student2)
-#add_students(6, students)
+#add_students(7, students)
 #create_db()
 #print(get_student(3))
 #course_name = 'Marketing'
